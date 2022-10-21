@@ -7,7 +7,7 @@ const initialState = [
     { id: 4, name: "milad", state: true, lastName:'sohrabi' },
 ]
 export const CardSlice = createSlice({
-    name: 'ToDo',
+    name: 'todo',
     initialState,
     reducers: {
         addCardItem: (state, action) => {
