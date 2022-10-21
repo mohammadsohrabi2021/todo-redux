@@ -3,7 +3,7 @@ import { store, persistor } from './components/redux/Store';
 import { Provider } from 'react-redux';
 import Home from './components/Home/Home';
 import { PersistGate } from 'redux-persist/integration/react'
-
+import './App.css'
 function App() {
   return (
     <div>
