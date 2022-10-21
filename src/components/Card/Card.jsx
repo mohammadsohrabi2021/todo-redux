@@ -23,8 +23,8 @@ function Card({ setUpdate, setFormStatus }) {
 
     return (
         <div>
-            <div>
-                <input className='input-search' value={search} onChange={handleSearch} placeholder='Search New User...' />
+            <div style={{textAlign:'center'}}>
+                <input  value={search} onChange={handleSearch} placeholder='Search New User...' />
             </div>
             {DataTodos.filter(todo => todo.name.toUpperCase().includes(search.toUpperCase())).map(todo =>
                 <div className={styles.container} >
