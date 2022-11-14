@@ -1,10 +1,7 @@
 
 import { createSlice } from "@reduxjs/toolkit";
 const initialState = [
-    { id: 1, name: "mohammad", state: false, lastName: 'sohrabi' },
-    { id: 2, name: "ali", state: true, lastName: 'sohrabi' },
-    { id: 3, name: "reza", state: false, lastName: 'sohrabi' },
-    { id: 4, name: "milad", state: true, lastName:'sohrabi' },
+
 ]
 export const CardSlice = createSlice({
     name: 'todo',
