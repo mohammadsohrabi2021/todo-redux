@@ -1,7 +1,9 @@
+import { Button, Grid, Typography } from '@mui/material';
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { deleteCardItem, checkCardItem } from '../redux/reducer/Reducer';
-import styles from './Card.module.scss'
+import DeleteIcon from '@mui/icons-material/Delete';
+import EditIcon from '@mui/icons-material/Edit';
 function Card({ setUpdate, setFormStatus }) {
     const DataTodos = useSelector(state => state.ToDo)
     const dispatch = useDispatch()
@@ -22,38 +24,34 @@ function Card({ setUpdate, setFormStatus }) {
     }
 
     return (
-        <div>
-            <div style={{textAlign:'center'}}>
-                <input  value={search} onChange={handleSearch} placeholder='Search New User...' />
-            </div>
-            {DataTodos.filter(todo => todo.name.toUpperCase().includes(search.toUpperCase())).map(todo =>
-                <div className={styles.container} >
-                    <div class="card-body" >
-                        <div key={todo.id} className={styles.card}>
-                            <img style={{ width: '50px' }} src={`https://avatars.dicebear.com/api/avataaars/:${todo.id}.svg`} alt="avatar" />
-                            <div className={styles.title}>
-                                <h4>{todo.id}</h4>
-                                <h4>{todo.name}</h4>
-                                <h4>{todo.lastName}</h4>
-                                <h4 onClick={() => handelCheck(todo.id)} style={{ cursor: 'pointer' }}>
-                                    {todo.state ? <i class="fa-regular fa-thumbs-up"></i> : <i class="fa-regular fa-thumbs-down"></i>}
-                                </h4>
-                            </div>
+        <Grid>
+            <Grid>
+                <input value={search} onChange={handleSearch} placeholder='Search New Todo...' />
+            </Grid>
+            {DataTodos.filter(todo => todo.title.toUpperCase().includes(search.toUpperCase())).map(todo =>
+                <Grid key={todo.id}>
+                    <Grid style={{background:todo.color,opacity:todo.compeleted? '0.5': 'unset'}} >
+                        <Typography variant='h4'>{todo.id}</Typography>
+                        <Typography variant='h4'>{todo.title}</Typography>
+                        <Typography variant='h4'>{todo.description}</Typography>
+                        <Typography variant='h4' onClick={() => handelCheck(todo.id)} style={{ cursor: 'pointer' }}>
+                            {todo.state ? 'yes' :'no'}
+                        </Typography>
+                    </Grid>
 
-                            <div className={styles.action}>
-                                <button className='btn btn-danger m-2' onClick={() => handleDelet(todo.id)}>
-                                    <i class="fa-solid fa-trash"></i>
-                                </button>
-                                <button className='btn btn-info m-2' onClick={() => handleUpdate(todo)}>
-                                    <i class="fa-solid fa-user-pen"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    <Grid>
+                        <Button variant='outlined' onClick={() => handleDelet(todo.id)}>
+                            <DeleteIcon />
+                        </Button>
+                        <Button variant='outlined' onClick={() => handleUpdate(todo)}>
+                            <EditIcon />
+                        </Button>
+                    </Grid>
+
+                </Grid>
 
             )}
-        </div>
+        </Grid>
     );
 }
 
