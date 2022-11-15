@@ -4,3 +4,12 @@
     margin: 0;
 }
 
+.Containerapp{
+    background-image: linear-gradient(to right ,#65bef5,#E4E5E6);
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
