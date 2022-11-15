@@ -1,0 +1,80 @@
+.containerForm {
+    background-image: linear-gradient(to right, #65bef5, #E4E5E6);
+    width: 83%;
+    /* height: 50px; */
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+
+.Form {
+    width: 100%;
+    /* background-color: rgb(3, 22, 22); */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.inputForm {
+    width: 90%;
+    display: flex;
+    align-items: center;
+
+    /* background-color: chartreuse;  */
+}
+
+.inputForm>input {
+    width: 30%;
+    outline: none;
+    border: 1px solid #909090;
+    height: 30px;
+    margin: 10px;
+    border-radius: 8px;
+    padding: 5px;
+
+}
+
+.containerForm button {
+    border: none;
+    padding: 10px 30px;
+    background-color: rgb(0, 80, 153);
+    color: white;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+
+
+.inputForm ::placeholder {
+    padding-left: 5px;
+}
+
+@media screen and (max-width: 426px) {
+    .containerForm {
+        width: 90%;
+    }
+
+    .Form {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .inputForm {
+        width: 90%;
+        flex-direction: column;
+    }
+
+    .inputForm>input {
+        width: 95%;
+    }
+
+    .containerForm button {
+        padding: 13px 90px;
+        color: white;
+        border-radius: 10px;
+        margin: 10px;
+    }
+}
