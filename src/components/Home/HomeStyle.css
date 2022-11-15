@@ -9,7 +9,9 @@
     padding-top: 30px;
     border-radius: 5px;
 }
-
+.footer{
+    background-color:rgb(25,118,210);
+}
 
 @media screen and (max-width: 768px) {
     .ContainerHome{

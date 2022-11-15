@@ -1,0 +1,10 @@
+.container{
+  text-align: center;
+  height: 50px;
+ 
+}
+.container p{
+  line-height: 50px;
+  font-weight: bold;
+  color: #fff;
+}
