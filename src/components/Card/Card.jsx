@@ -28,7 +28,7 @@ function Card({ setUpdate, setFormStatus }) {
     }
 
     return (
-        <Grid container item dir={'rtl'}>
+        <Grid container item dir={'rtl'} display={'flex'} >
             <Grid item display={'flex'} sx={{ border: "1px solid #8888 ", borderRadius: "10px" }} xs={12} mb={2}>
                 <IconButton type="button" sx={{ p: "11px" }} aria-label="جستجو">
                     <SearchIcon />

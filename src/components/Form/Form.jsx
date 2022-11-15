@@ -58,7 +58,7 @@ function Form({ update, setUpdate, FormStatus, setFormStatus }) {
     return (
         <Grid container justifyContent={'center'} alignItems={'center'} dir={'rtl'}>
             <form onSubmit={handleSubmit}>
-            <Grid container maxWidth={'600px'} spacing={3} p={2} >
+            <Grid container maxWidth={'600px'}  p={2} >
                     <Grid item xs={12} my={1} display={"flex"} justifyContent={'center'} alignItems={'center'}>
                         <TextField name={'title'} value={FormStatus.title} onChange={handleChange} required sx={{
                             width: '80%',
@@ -79,7 +79,7 @@ function Form({ update, setUpdate, FormStatus, setFormStatus }) {
                             </Grid>
                         ))}
                     </Grid>
-                    <Grid item xs={12} mt={2} mr={6}>
+                    <Grid item xs={12} mt={12} mr={6}>
                         <Button variant='contained' type='submit' xs={12} >
                             {update === 'add' ?
                                 'اضافه کردن' : "ثبت ویرایش"}
