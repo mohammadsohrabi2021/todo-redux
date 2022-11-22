@@ -13,3 +13,8 @@
     align-items: center;
     
 }
+a{
+    list-style-type: none;
+    text-decoration: none;
+    color: #fff;
+}
