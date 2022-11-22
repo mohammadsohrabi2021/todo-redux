@@ -34,15 +34,15 @@ function Card({ setFormStatus, setUpdate }) {
         justifyContent={"center"}
         mb={2}
       >
-        <Grid xs={3} md={2} ml={2}>
+        <Grid xs={6} md={2} ml={2}>
           <Button variant="contained" color="success" fullWidth>
-            <Link to={"/Form"}> Add + </Link>
+            <Link to={"/Form"}> {'افزودن آیتم جدید'} </Link>
           </Button>
         </Grid>
         <Grid
           item
           display={"flex"}
-          xs={9}
+          xs={6}
           md={10}
           sx={{ border: "1px solid #8888 ", borderRadius: "10px" }}
           

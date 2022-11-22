@@ -3,11 +3,11 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addCardItem, updateCardItem } from "../redux/reducer/Reducer";
 import "./Form.mudole.css";
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { Link, useNavigate } from "react-router-dom";
-function Form({update,setUpdate,FormStatus,setFormStatus}) {
-    const back = useNavigate();
- 
+function Form({ update, setUpdate, FormStatus, setFormStatus }) {
+  const back = useNavigate();
+
   const dispatch = useDispatch();
   const colors = [
     // {
@@ -39,7 +39,7 @@ function Form({update,setUpdate,FormStatus,setFormStatus}) {
     setFormStatus({ ...FormStatus, [e.target.name]: e.target.value });
   };
   const handleSubmit = (event) => {
-    back('/')
+    back("/");
     event.preventDefault();
     if (update === "add") {
       dispatch(
@@ -133,12 +133,34 @@ function Form({update,setUpdate,FormStatus,setFormStatus}) {
               </Grid>
             ))}
           </Grid>
-          <Grid item xs={9} sm={9} md={9.5} lg={10} my={5.5} mr={6} display={'flex'} justifyContent={'space-between'}>
-            <Button variant="contained" type="submit" >
+          <Grid
+            item
+            xs={9}
+            sm={9}
+            md={9.5}
+            lg={10}
+            my={5.5}
+            mr={6}
+            display={"flex"}
+            justifyContent={"space-between"}
+          >
+            <Button
+              variant="contained"
+              type="submit"
+              disabled={
+                !(
+                  FormStatus.title &&
+                  FormStatus.color &&
+                  FormStatus.description
+                )
+              }
+            >
               {update === "add" ? "اضافه کردن" : "ثبت ویرایش"}
             </Button>
             <Button variant="contained" color="success">
-            <Link to={"/"}> <ArrowBackIcon/></Link>
+              <Link to={"/"}>
+                <ArrowBackIcon />
+              </Link>
             </Button>
           </Grid>
         </Grid>
