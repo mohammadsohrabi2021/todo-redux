@@ -1,19 +1,17 @@
 import { Button, Grid, Typography } from "@mui/material";
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { deleteCardItem, checkCardItem } from "../redux/reducer/Reducer";
-import DeleteIcon from "@mui/icons-material/Delete";
+import { checkCardItem } from "../redux/reducer/Reducer";
 import EditIcon from "@mui/icons-material/Edit";
 import InputBase from "@mui/material/InputBase";
 import SearchIcon from "@mui/icons-material/Search";
 import IconButton from "@mui/material/IconButton";
 import "./CardStyle.css";
 import { Link } from "react-router-dom";
-import Delete from '../Delete/Delete'
+import Delete from "../Delete/Delete";
 function Card({ setFormStatus, setUpdate }) {
   const DataTodos = useSelector((state) => state.ToDo);
   const dispatch = useDispatch();
-
 
   const handleUpdate = (todo) => {
     setFormStatus(todo);
@@ -28,26 +26,37 @@ function Card({ setFormStatus, setUpdate }) {
   };
 
   return (
-    <Grid container item dir={"rtl"} display={"flex"}>
+    <Grid container item dir={"rtl"} xs={12} display={"flex"}>
       <Grid
-        item
-        display={"flex"}
-        sx={{ border: "1px solid #8888 ", borderRadius: "10px" }}
         xs={12}
+        display={"flex"}
+        alignItems={"center"}
+        justifyContent={"center"}
         mb={2}
       >
-        <Button variant="contained" color="success">
-          <Link to={"/Form"}> Add + </Link>
-        </Button>
-        <IconButton type="button" sx={{ p: "11px" }} aria-label="جستجو">
-          <SearchIcon />
-        </IconButton>
-        <InputBase
-          sx={{ ml: 1, flex: 1 }}
-          inputProps={{ "aria-label": "search google maps" }}
-          onChange={handleSearch}
-          placeholder="جستجوی عبارت مورد نظر ..."
-        />
+        <Grid xs={3} md={2} ml={2}>
+          <Button variant="contained" color="success" fullWidth>
+            <Link to={"/Form"}> Add + </Link>
+          </Button>
+        </Grid>
+        <Grid
+          item
+          display={"flex"}
+          xs={9}
+          md={10}
+          sx={{ border: "1px solid #8888 ", borderRadius: "10px" }}
+          
+        >
+          <IconButton type="button" sx={{ p: "11px" }} aria-label="جستجو">
+            <SearchIcon />
+          </IconButton>
+          <InputBase
+            sx={{ ml: 1, flex: 1 }}
+            inputProps={{ "aria-label": "search google maps" }}
+            onChange={handleSearch}
+            placeholder="جستجوی عبارت مورد نظر ..."
+          />
+        </Grid>
       </Grid>
       {DataTodos.filter((todo) =>
         todo.title.toUpperCase().includes(search.toUpperCase())
@@ -56,6 +65,7 @@ function Card({ setFormStatus, setUpdate }) {
           key={todo.id}
           borderRadius={4}
           mx={0.5}
+         
           mb={2}
           justifyContent={"space-between"}
           display={"flex"}
@@ -87,7 +97,7 @@ function Card({ setFormStatus, setUpdate }) {
             </Grid>
           </Grid>
           <Grid sx={{ cursor: "pointer" }}>
-           <Delete todo={todo}/>
+            <Delete todo={todo} />
             <Link to={"/form"}>
               <Button
                 variant="outline"
