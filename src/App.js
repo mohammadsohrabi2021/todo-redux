@@ -7,6 +7,7 @@ import { PersistGate } from 'redux-persist/integration/react'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./components/layout/index"
 import './App.css'
+import { Grid } from '@mui/material';
 function App() {
   const [update, setUpdate] = useState('add')
   const [FormStatus, setFormStatus] = useState({
@@ -36,13 +37,13 @@ function App() {
     
 ]);
   return (
-    <div>
+    <Grid>
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
         <RouterProvider router={router} />
         </PersistGate>
       </Provider>
-    </div>
+    </Grid>
   );
 }
 

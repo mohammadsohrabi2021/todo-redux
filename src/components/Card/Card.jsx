@@ -9,13 +9,12 @@ import SearchIcon from "@mui/icons-material/Search";
 import IconButton from "@mui/material/IconButton";
 import "./CardStyle.css";
 import { Link } from "react-router-dom";
+import Delete from '../Delete/Delete'
 function Card({ setFormStatus, setUpdate }) {
   const DataTodos = useSelector((state) => state.ToDo);
   const dispatch = useDispatch();
 
-  const handleDelet = (id) => {
-    dispatch(deleteCardItem(id));
-  };
+
   const handleUpdate = (todo) => {
     setFormStatus(todo);
     setUpdate("update");
@@ -88,13 +87,7 @@ function Card({ setFormStatus, setUpdate }) {
             </Grid>
           </Grid>
           <Grid sx={{ cursor: "pointer" }}>
-            <Button
-              variant="outline"
-              onClick={() => handleDelet(todo.id)}
-              sx={{ cursor: "pointer" }}
-            >
-              <DeleteIcon />
-            </Button>
+           <Delete todo={todo}/>
             <Link to={"/form"}>
               <Button
                 variant="outline"
