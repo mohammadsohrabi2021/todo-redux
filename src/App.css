@@ -18,3 +18,8 @@ a{
     text-decoration: none;
     color: #fff;
 }
+@font-face {
+    font-family: "IRANSANS";  
+    src: 
+      url("./Font/Font/iranyekanwebregular.woff2") format("woff2");
+  }
